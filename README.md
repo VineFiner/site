@@ -1,15 +1,19 @@
-# Basic Template
+# Vapor + Docker(git) 
 
-A basic vapor template for starting a new Vapor web application. If you're using vapor toolbox, you can use: `vapor new --template=basic`
+## 环境：
 
-## 📖 Documentation
+```
+Docker version 1.12.1, build 6f9534c
+Apple Swift version 3.0 (swiftlang-800.0.46.2 clang-800.0.38)
+vap
+```  
 
-Visit the Vapor web framework's [documentation](http://docs.vapor.codes) for instructions on how to use this package.
+这是个练手的项目，使用 Docker 技术进行环境分离， 采用了 `kitura-ubanutu` 镜像，搭建swift后台环境
 
-## 💧 Community
 
-Join the welcoming community of fellow Vapor developers in [slack](http://vapor.team).
+## Docker 镜像安装
+```
+docker pull ibmcom/kitura-ubuntu:latest
+```
 
-## 🔧 Compatibility
 
-This package has been tested on macOS and Ubuntu.
