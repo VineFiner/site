@@ -1,0 +1,27 @@
+{
+  "name": "spider",
+  "version": "1.0.0",
+  "description": "apide vapor",
+  "main": "index.js",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-vapor": "^1.1.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-vapor": "^1.1.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OHeroJ/site.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OHeroJ/site/issues"
+  },
+  "homepage": "https://github.com/OHeroJ/site#readme"
+}
