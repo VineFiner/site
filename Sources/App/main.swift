@@ -1,12 +1,12 @@
 import Vapor
-
+import VaporPostgreSQL
 
 let drop = Droplet()
-
+// have error
+//try drop.addProvider(VaporPostgreSQL.Provider.self)
+//drop.preparations.append(Blog.self)
 
 drop.get { req in
-//    let query = try Blog.all()
-//    return try query.makeNode().converted(to: JSON.self)
     return "Hello,world"
 }
 
