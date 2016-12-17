@@ -1,0 +1,38 @@
+#extend("base")
+
+#export("body") {
+
+    <div class="row">
+        <div class="u-full-width">
+            <h4>Blog Create</h4>
+        </div>
+    </div>
+
+    <form action="/blog" method="post">
+        <div class="u-full-width">
+            <label>Title</label>
+            <input name="title" class="u-full-width" placeholder="title">
+        </div>
+        <div class="u-full-width">
+            <label>Category</label>
+            <input name="category" class="u-full-width" placeholder="Category">
+        </div>
+
+        <div class="u-full-width" style="height: 360px;"id="epiceditor">
+            <label>Content</label>
+            <textarea id="my-edit-area" name="content" class="u-full-width"></textarea>
+        </div>
+
+        <div class= "row" style="margin-top: 50px">
+            <input class="button-primary" type="submit" value="Save Blog"/>
+        </div>
+
+    </form>
+
+    <script>
+        <!-- 这里在basepath里去掉了 "/" -->
+        var editor = new EpicEditor({basePath: '/lib/epiceditor/'});
+        editor.load();
+    </script>
+
+}

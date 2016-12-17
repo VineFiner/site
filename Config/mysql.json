@@ -1,8 +1,0 @@
-{
-    "host": "localhost",
-    "user": "root",
-    "password": "lai12345",
-    "database": "spider",
-    "port":3306,
-    "encoding": "utf8"
-}

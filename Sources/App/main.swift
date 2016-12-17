@@ -1,20 +1,20 @@
 import Vapor
-import VaporPostgreSQL
+import VaporMySQL
 
 let drop = Droplet()
-// have error
-//try drop.addProvider(VaporPostgreSQL.Provider.self)
-//drop.preparations.append(Blog.self)
 
-drop.get { req in
-    return "Hello,world"
-}
+try drop.addProvider(VaporMySQL.Provider.self)
+drop.preparations += Post.self
+drop.preparations += Author.self
+drop.preparations += Category.self
+drop.preparations += Acronym.self
 
+// 关闭页面缓存
+(drop.view as? LeafRenderer)?.stem.cache = nil
 
-drop.get("/post") { req  in
-    return JSON(["id":1,"name":"Oheroj","tell":"welcome"])
-}
+// 也可以一个路由一个 App,如果是 blog , 建立一个 Blog 的项目，就用
+// Blog 这个类来分发这个 VC 就好
+let acronymController = AcronymController(droplet: drop)
+let blogController = BlogController(droplet: drop)
 
 drop.run()
-
-

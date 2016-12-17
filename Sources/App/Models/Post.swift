@@ -2,19 +2,17 @@ import Vapor
 import Fluent
 import Foundation
 
-final class Blog: Model {
+final class Post: Model {
     var id: Node?
     var desc: String
     var title: String
-    var url: String
-    var thumb: String
     var category: String
+    var content: String
     
-    init(desc:String, title:String,url:String, thumb: String, category:String ) {
+    init(desc:String, title:String, content: String, category:String ) {
         self.desc = desc
         self.title = title
-        self.url = url
-        self.thumb = thumb
+        self.content = content
         self.category = category
     }
 
@@ -22,8 +20,7 @@ final class Blog: Model {
         id = try node.extract("id")
         desc = try node.extract("desc")
         title = try node.extract("title")
-        url = try node.extract("url")
-        thumb = try node.extract("thumb")
+        content = try node.extract("content")
         category = try node.extract("category")
     }
 
@@ -32,27 +29,26 @@ final class Blog: Model {
             "id": id,
             "desc": desc,
             "title": title,
-            "url": url,
-            "thumb": thumb,
+            "content": content,
             "category": category,
         ])
     }
 }
 
-extension Blog: Preparation {
+extension Post: Preparation {
     static func prepare(_ database: Database) throws {
-        // 无语了都，居然不能这里设置blogs
-        try database.create("blogs", closure: { (post) in
+        // 无语了都，居然不能这里设置
+        try database.create("posts", closure: { (post) in
             post.id()
-            post.string("title")
             post.string("desc")
-            post.string("url")
-            post.string("thumb")
+            post.string("title")
+            post.string("content")
             post.string("category")
         })
     }
-
+    
+    // this will be run if vapor run prepare --revert is called.
     static func revert(_ database: Database) throws {
-        try database.delete("blogs")
+        try database.delete("posts")
     }
 }

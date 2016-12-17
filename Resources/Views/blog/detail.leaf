@@ -1,0 +1,14 @@
+#extend("base")
+
+#export("body") {
+
+    <div class="row">
+        #(content)
+
+    </div>
+
+    <div class="row">
+    <a class="button button-primary" href="/blog/">Back Post Lists</a>
+    </div>
+
+}
