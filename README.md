@@ -1,20 +1,11 @@
-# Vapor + Docker(git) 
 
-## 环境：
 
-```
-Docker version 1.12.1, build 6f9534c
-Apple Swift version 3.0 (swiftlang-800.0.46.2 clang-800.0.38)
-vap
-```
+# A Blog Site step by step
 
-这是个练手的项目，使用 Docker 技术进行环境分离， 采用了 `kitura-ubanutu` 镜像，搭建swift后台环境
+ **前提知识**：
 
-## Docker 镜像安装
+ [Vapor社区文档](https://vapor.github.io/documentation/)
 
-```sh 
-docker pull ibmcom/kitura-ubuntu:latest
-```
 
 ## Controller:
 
@@ -127,12 +118,35 @@ final class Markdown: Tag {
 .Package(url: "https://github.com/czechboy0/cmark.swift.git", majorVersion: 0, minor: 1)
 ```
 
-在 `main.swift` 中注册这个库。
+在 `main.swift` 中注册这个类。
 
 ```
 // register markdown tag: #markdown(content)
 (drop.view as? LeafRenderer)?.stem.register(Markdown())
 ```
+
+## 部署 Heroku
+
+### 使用 PostgreSQL
+
+### Vapor + Docker(git) 
+
+#### 环境：
+
+```
+Docker version 1.12.1, build 6f9534c
+Apple Swift version 3.0 (swiftlang-800.0.46.2 clang-800.0.38)
+vap
+```
+
+这是个练手的项目，使用 Docker 技术进行环境分离， 采用了 `kitura-ubanutu` 镜像，搭建swift后台环境
+
+#### Docker 镜像安装
+
+```sh 
+docker pull ibmcom/kitura-ubuntu:latest
+```
+
 
 ## 待解决问题
 
