@@ -99,10 +99,55 @@ final class BlogController : BaseController {
 (drop.view as? LeafRenderer)?.stem.cache = nil
 ```
 
+### suport markdown tag
+
+思路来源于 `leaf` 内部的 `#raw()` 的实现。
+
+```swift
+final class Markdown: Tag {
+
+    let name = "markdown"
+
+    func run(stem: Stem, context: Context, tagTemplate: TagTemplate, arguments: [Argument]) throws -> Node? {
+        guard let string = arguments.first?.value?.string else { return nil }
+        let html = try markdownToHTML(string)
+        let unescaped = html.bytes
+        return .bytes(unescaped)
+    }
+
+    func shouldRender(stem: Stem, context: Context, tagTemplate: TagTemplate, arguments: [Argument], value: Node?) -> Bool {
+        return true
+    }
+}
+```
+
+`markdownToHTML` 依赖下面这个库提供：
+
+```
+.Package(url: "https://github.com/czechboy0/cmark.swift.git", majorVersion: 0, minor: 1)
+```
+
+在 `main.swift` 中注册这个库。
+
+```
+// register markdown tag: #markdown(content)
+(drop.view as? LeafRenderer)?.stem.register(Markdown())
+```
+
 ## 待解决问题
 
-在文章首页中，如何显示 markdown 文本， 思路如下：
+完善页面，美化文章列表 和 文章详情页
+如果时间允许，添加 分类编辑逻辑
 
-`Leaf` 现已实现 `raw` 这个 tag 的实现，我们可以自定义个 `markdown` 且参考 raw 的实现来封装这个 tag.
+可能会遇到的难点：
 
-任务计划完成时间: 2016.12.19 晚
+模型的关联，建表问题
+
+需要准备用户权限问题
+
+sketch 设计出简要的 ui 设计稿！
+
+
+
+
+
