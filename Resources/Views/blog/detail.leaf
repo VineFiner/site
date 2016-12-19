@@ -3,14 +3,10 @@
 #export("body") {
 
     <div class="row">
-        #raw() {
-            
-            <div>hello ,world</div>
-        }
+        #markdown(content)
     </div>
 
     <div class="row">
     <a class="button button-primary" href="/blog/">Back Post Lists</a>
     </div>
-
 }

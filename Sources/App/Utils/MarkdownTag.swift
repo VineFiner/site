@@ -9,22 +9,24 @@
 import Leaf
 import cmark_swift
 
-final class Markdown: BasicTag {
+extension Leaf {
+
+}
+
+final class Markdown: Tag {
     
     let name = "markdown"
 
-    func run(arguments: [Argument]) throws -> Node? {
-
-        guard let content = arguments[0].value?.string else {
-            return nil
-        }
-
-        let html = try markdownToHTML(content)
-
-        return .string(html)
+    func run(stem: Stem, context: Context, tagTemplate: TagTemplate, arguments: [Argument]) throws -> Node? {
+        guard let string = arguments.first?.value?.string else { return nil }
+        let html = try markdownToHTML(string)
+        let unescaped = html.bytes
+        return .bytes(unescaped)
     }
 
-
+    func shouldRender(stem: Stem, context: Context, tagTemplate: TagTemplate, arguments: [Argument], value: Node?) -> Bool {
+        return true
+    }
 }
 
 
