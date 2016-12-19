@@ -145,6 +145,8 @@ final class Markdown: Tag {
 
 需要准备用户权限问题
 
+部署到 heroku 上
+
 sketch 设计出简要的 ui 设计稿！
 
 
