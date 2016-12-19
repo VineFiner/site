@@ -99,3 +99,10 @@ final class BlogController : BaseController {
 (drop.view as? LeafRenderer)?.stem.cache = nil
 ```
 
+## 待解决问题
+
+在文章首页中，如何显示 markdown 文本， 思路如下：
+
+`Leaf` 现已实现 `raw` 这个 tag 的实现，我们可以自定义个 `markdown` 且参考 raw 的实现来封装这个 tag.
+
+任务计划完成时间: 2016.12.19 晚
