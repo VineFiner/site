@@ -3,8 +3,10 @@
 #export("body") {
 
     <div class="row">
-        #(content)
-
+        #raw() {
+            
+            <div>hello ,world</div>
+        }
     </div>
 
     <div class="row">

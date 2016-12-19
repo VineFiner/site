@@ -8,6 +8,7 @@
 
 import HTTP
 import Vapor
+import cmark_swift
 
 final class BlogController : BaseController {
 
