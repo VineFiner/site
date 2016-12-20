@@ -125,7 +125,7 @@ final class Markdown: Tag {
 (drop.view as? LeafRenderer)?.stem.register(Markdown())
 ```
 
-## 部署 Heroku
+## 部署 Heroku （待做）
 
 ### 使用 PostgreSQL
 
@@ -146,6 +146,10 @@ vap
 ```sh 
 docker pull ibmcom/kitura-ubuntu:latest
 ```
+
+## 现实现功能
+
+文章的 增 删 改 查
 
 
 ## 待解决问题
