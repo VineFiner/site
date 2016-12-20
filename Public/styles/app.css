@@ -49,3 +49,32 @@ body {
     display: inline-block;
     float: left;
 }
+
+/*下面是自定义样式*/
+.navbar {
+    margin:0 auto;
+    font-size: 24px;
+    font-weight: bolder;
+    height: 70px;
+    background-color: #e5e5e5;
+    margin-bottom: 20px;
+}
+
+.navbar-list {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+.navbar-item {
+    float: left;
+}
+
+.navbar-link {
+    width: 120px;
+    display: block;
+    line-height: 70px;
+    float: left;
+    margin-left: 80px;
+    text-decoration: none;
+}

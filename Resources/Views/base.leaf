@@ -4,6 +4,7 @@
     #import("head")
     <title>TIL</title>
     <meta name="viewport" content="width=device-width, initial-sacle=1">
+    <link rel="stylesheet" href="/styles/app.css">
     <link rel="stylesheet" href="/styles/normalize.css">
     <link rel="stylesheet" href="/styles/skeleton.css">
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Raleway:400,300,600" type="text/css">
@@ -11,13 +12,23 @@
 
 </head>
     <body>
-        <div class="container">
-            <div class="row">
-                <div class="u-full-width">
-                    <h2>TIL: Tody I Learn <smal>Vapor web Service</smal></h2>
-                </div>
-            </div>
+        <div>
+            <nav class="navbar">
+                <ul class="navbar-list">
+                    <li class="navbar-item">
+                        <a class="navbar-link" href="/blog">Index</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a class="navbar-link" href="/">Category</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a class="navbar-link" href="/">About</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="container">
             #import("body")
+            </div>
         </div>
     </body>
 </html>
