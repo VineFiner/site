@@ -6,6 +6,19 @@
 
  [Vapor社区文档](https://vapor.github.io/documentation/)
 
+## Model
+
+* 博客 Post
+* 分类 Category
+* 作者 Author
+
+Post (one --对-- one) Author  对应 `Vapor` 上的 Children Parent（父 子）
+Post (many--对--many) Category 对应 `Vapor` 上的 Silbing（兄弟）
+
+如何构建表间关系，且异步到 [Vapor Relation](https://vapor.github.io/documentation/fluent/relation.html) 中。
+
+> 注： vapor 未提供数据库的其他 commond? 每次给表添加字段或者删除字段，how do?
+
 
 ## Controller:
 
@@ -159,7 +172,8 @@ docker pull ibmcom/kitura-ubuntu:latest
 
 可能会遇到的难点：
 
-模型的关联，建表问题
+markdown 文本不应该存放为 文本内容，应该是上传为 一个 md 文件
+所以需要添加一个文件上传功能，返回一个 url
 
 需要准备用户权限问题
 
