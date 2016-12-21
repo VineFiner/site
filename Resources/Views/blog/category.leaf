@@ -1,0 +1,7 @@
+#extend("base")
+
+#export("body") {
+
+    <h1>Category</h1>
+
+}

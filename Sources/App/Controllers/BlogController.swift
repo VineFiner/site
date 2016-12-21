@@ -31,13 +31,11 @@ final class BlogController : BaseController {
 
     func updatePost(request: Request, id:Int) throws -> ResponseRepresentable {
         guard let title = request.data["title"]?.string,
-            let content = request.data["content"]?.string,
-            let category = request.data["category"]?.string else {
+            let content = request.data["content"]?.string else {
                 throw Abort.badRequest
         }
         var post = try Post.find(id)
         post?.title = title
-        post?.category = category
         post?.content = content
         try post?.save()
         return Response(redirect: "/blog")
@@ -65,7 +63,7 @@ final class BlogController : BaseController {
         let category = request.data["category"]?.string else {
             throw Abort.badRequest
         }
-        var post = Post(desc: content, title: title, content: content, category: category)
+        var post = Post(title: title, content: content, authorId: 1)
         try post.save()
         return Response(redirect: "/blog")
     }

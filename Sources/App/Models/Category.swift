@@ -24,7 +24,13 @@ final class Category : Model {
             "id": id,
             "title": title,
             ])
+    }
+}
 
+// 多对多
+extension Category {
+    func posts() throws -> Siblings<Post> {
+        return try siblings()
     }
 }
 
