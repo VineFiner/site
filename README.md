@@ -11,9 +11,11 @@
 * 博客 Post
 * 分类 Category
 * 作者 Author
+| Model         | Releation | Vapor Releation |
+|---------------|-----------|-----------------|
+| Post-Author   | one-one   | Children(Parent)|
+| Post-Category | many-many | Silbing         |
 
-Post (one --对-- one) Author  对应 `Vapor` 上的 Children Parent（父 子）
-Post (many--对--many) Category 对应 `Vapor` 上的 Silbing（兄弟）
 
 如何构建表间关系，且异步到 [Vapor Relation](https://vapor.github.io/documentation/fluent/relation.html) 中。
 
