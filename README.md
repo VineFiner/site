@@ -2,22 +2,25 @@
 
 # A Blog Site step by step
 
+[toc]
+
  **前提知识**：
 
  [Vapor社区文档](https://vapor.github.io/documentation/)
 
 ## Model
 
-* 博客 Post
-* 分类 Category
-* 作者 Author
+* 博客 **Post**
+* 分类 **Category**
+* 作者 **Author**
+
 | Model         | Releation | Vapor Releation |
 |---------------|-----------|-----------------|
 | Post-Author   | one-one   | Children(Parent)|
 | Post-Category | many-many | Silbing         |
 
 
-如何构建表间关系，且异步到 [Vapor Relation](https://vapor.github.io/documentation/fluent/relation.html) 中。
+如何构建表间关系，-> [Vapor Relation](https://vapor.github.io/documentation/fluent/relation.html) 。
 
 > 注： vapor 未提供数据库的其他 commond? 每次给表添加字段或者删除字段，how do?
 
