@@ -2,20 +2,19 @@
 
 #export("body") {
 
-    <h1>Login</h1>
+    <h1>Regist</h1>
 
-    <form method="post" action="/author/login">
+    <form method="post" action="/author/registor">
         <div class="row">
             <label for="Email">Your email</label>
             <input type="email" placeholder="test@mailbox.com" id="exampleEmailInput" name="email">
-        </div>
+                </div>
         <div class="row">
             <label for="Password">Your Password</label>
             <input class="" type="password" name="password" id="Password">
-        </div>
+                </div>
         <div class="row">
-            <input class="button-primary" type="submit" value="Login"/>
-            <a class="button" href="/author/regist">Regist</a>
+            <input class="button-primary" type="submit" value="Regist"/>
         </div>
 
     </form>

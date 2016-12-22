@@ -16,9 +16,14 @@ final class AuthorController : BaseController {
     override func addRouters() {
         let group = drop.grouped("author")
         group.get("login", handler: loginIndexView)
+        group.get("regist", handler: registIndexView)
     }
 
     func loginIndexView(request: Request) throws -> ResponseRepresentable {
         return try drop.view.make("blog/login")
+    }
+
+    func registIndexView(request: Request) throws -> ResponseRepresentable {
+        return try drop.view.make("blog/regist")
     }
 }

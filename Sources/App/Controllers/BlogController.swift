@@ -71,6 +71,6 @@ final class BlogController : BaseController {
     func indexView(request: Request) throws -> ResponseRepresentable {
         let posts = try Post.all().makeNode()
         let parameters = try Node(node: ["posts": posts])
-        return try drop.view.make("blog/index", parameters);
+        return try drop.view.make("blog/index", parameters)
     }
 }

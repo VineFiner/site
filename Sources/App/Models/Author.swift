@@ -43,7 +43,7 @@ final class Author : Model {
 
 extension Author {
     func posts() throws -> Children<Post> {
-        return try children()
+        return  children()
     }
 }
 

@@ -22,7 +22,7 @@
                         <a class="navbar-link" href="/category">Category</a>
                     </li>
                     <li class="navbar-item">
-                        <a class="navbar-link" href="/">About</a>
+                        <a class="navbar-link" href="/about">About</a>
                     </li>
 
                     <li class="navbar-item">

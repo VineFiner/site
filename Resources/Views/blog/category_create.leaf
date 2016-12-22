@@ -1,0 +1,19 @@
+#extend("base")
+
+#export("body") {
+    <h1>Category Update</h1>
+
+    <div class ="row">
+        <form method="post" ation="/category/update/#(category.id)">
+            <div class="ten columns">
+                <label>Title</label>
+                <input name="title" class="u-full-width" placeholder="title" value="#(category.title)">
+
+            </div>
+            <div class="two columns">
+                <input class="button-primary" type="submit" value="Save Category"/>
+            </div>
+        </form>
+
+    <div>
+}

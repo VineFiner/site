@@ -14,6 +14,10 @@ final class Category : Model {
     var id: Node?
     var title: String
 
+    init(title: String){
+        self.title = title
+    }
+
     init(node: Node, in context: Context) throws {
         id = try node.extract("id")
         title = try node.extract("title")

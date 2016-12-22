@@ -1,0 +1,6 @@
+#extend("base")
+
+#export("body") {
+
+    <h1>About</h1>
+}
