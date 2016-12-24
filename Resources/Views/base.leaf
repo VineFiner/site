@@ -1,38 +1,60 @@
 <!DOCTYPE html>
 <html>
-<head>
-    #import("head")
-    <title>TIL</title>
-    <meta name="viewport" content="width=device-width, initial-sacle=1">
-    <link rel="stylesheet" href="/styles/app.css">
-    <link rel="stylesheet" href="/styles/normalize.css">
-    <link rel="stylesheet" href="/styles/skeleton.css">
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Raleway:400,300,600" type="text/css">
-    <script type="text/javascript" src="/lib/epiceditor/js/epiceditor.min.js"></script>
+    <head>
+        #import("head")
+        <title>TIL</title>
+        <meta name="viewport" content="width=device-width, initial-sacle=1">
 
-</head>
+        <link rel="stylesheet" href="/styles/app.css">
+        <link rel="stylesheet" href="/lib/bulma/bulma.css">
+
+        <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Raleway:400,300,600" type="text/css">
+        <script type="text/javascript" src="/lib/epiceditor/js/epiceditor.min.js"></script>
+
+    </head>
+
     <body>
-        <div>
-            <nav class="navbar">
-                <ul class="navbar-list">
-                    <li class="navbar-item">
-                        <a class="navbar-link" href="/blog">Index</a>
-                    </li>
-                    <li class="navbar-item">
-                        <a class="navbar-link" href="/category">Category</a>
-                    </li>
-                    <li class="navbar-item">
-                        <a class="navbar-link" href="/about">About</a>
-                    </li>
 
-                    <li class="navbar-item">
-                        <a class="navbar-link" href="/author/login">Login</a>
-                    </li>
-                </ul>
-            </nav>
-            <div class="container">
-            #import("body")
+        <section class="hero  is-fullheight">
+            <div class="hero-head">
+                <header class="nav">
+                    <div class="container">
+                        <div class="nav-left">
+                            <a class="nav-item">
+                               Site
+                            </a>
+                        </div>
+                        <span class="nav-toggle">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                        <div class="nav-right nav-menu">
+
+                            <a class="nav-item is-active" href="/blog">
+                                Index
+                            </a>
+                            <a class="nav-item" href="/category">
+                                Category
+                            </a>
+                            <a class="nav-item" href="/about">
+                                About
+                            </a>
+
+                            <a class="nav-item" href="/author/login">
+                                Login
+                            </a>
+                        </div>
+                    </div>
+                </header>
             </div>
-        </div>
+
+            <!-- Hero content: will be in the middle -->
+            <div class="hero-body">
+                <div class="container">
+                #import("body")
+                </div>
+            </div>
+        </section>
     </body>
 </html>

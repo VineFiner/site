@@ -15,12 +15,14 @@ final class Author : Model {
     var id: Node?
     var name: String
     var email: String
-    var github: String
+    var github: String?
+    var password: String
 
-    init(name:String, email:String, github:String) {
+    init(name:String, email:String, github:String?, password: String) {
         self.name = name
         self.email = email
         self.github = github
+        self.password = password
     }
 
     init(node: Node, in context: Context) throws {
@@ -28,6 +30,7 @@ final class Author : Model {
         name = try node.extract("name")
         email = try node.extract("email")
         github = try node.extract("github")
+        password = try node.extract("password")
     }
 
     func makeNode(context: Context) throws -> Node {
@@ -35,7 +38,8 @@ final class Author : Model {
             "id": id,
             "name": name,
             "email": email,
-            "github": github
+            "github": github,
+            "password": password
         ])
 
     }
@@ -54,7 +58,8 @@ extension Author: Preparation {
             author.id()
             author.string("name")
             author.string("email")
-            author.string("github")
+            author.string("github", optional:true)
+            author.string("password")
         })
     }
 

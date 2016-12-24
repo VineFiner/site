@@ -1,46 +1,50 @@
 #extend("base")
 
 #export("body") {
+    <div>
+        <div class="columns">
+            <div class="column is-10">
+                <h2>Blog list</h2>
+            </div>
+            <div class="column">
+                <a class="button is-primary" href="/blog/create">Create Post</a>
+            </div>
+        </div>
+    <div>
 
-    <div class="row">
-        <div class="nine columns">
-        <h4>Blog list</h4>
-        </div>
-        <div class="three columns">
-            <a class="button button-primary" href="/blog/create">Create Post</a>
-        </div>
+    <div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>title</th>
+                    <th>desc</th>
+                    <th>category</th>
+                    <th>delete</th>
+                    <th>update</th>
+                    <th>detail</th>
+                </tr>
+            </thead>
+            <thody>
+            #loop(posts, "post") {
+                <tr>
+                    <td>#(post.title)</td>
+                    <td>#(post.content)</td>
+                    <td>#(post.category)</td>
+                    <td><a class="button is-primary is-small"" href="/blog/update/#(post.id)">Update</a></td>
+                    <td>
+                        <form action="/blog/#(post.id)/delete" method="post">
+                            <input type="submit" class="button is-danger is-small" value="Delete" />
+                        </form>
+                    </td>
+                    <td>
+                        <a class="button is-primary is-small"" href="/blog/#(post.id)">Detail</a>
+                    </td>
+                </tr>
+            }
+            </tbody>
+
+        </table>
     </div>
-
-    <table class="u-full-width">
-        <thead>
-            <tr>
-                <th>title</th>
-                <th>desc</th>
-                <th>category</th>
-                <th>delete</th>
-                <th>update</th>
-                <th>detail</th>
-            </tr>
-        </thead>
-        <thody>
-        #loop(posts, "post") {
-            <tr>
-                <td>#(post.title)</td>
-                <td>#(post.content)</td>
-                <td>#(post.category)</td>
-                <td><a class="button button-primary" href="/blog/update/#(post.id)">Update</a></td>
-                <td>
-                    <form action="/blog/#(post.id)/delete" method="post">
-                        <input type="submit" value="Delete" />
-                    </form>
-                </td>
-                <td>
-                    <a class="button button-primary" href="/blog/#(post.id)">Detail</a>
-                </td>
-            </tr>
-        }
-        </tbody>
-    </table>
 
 
 

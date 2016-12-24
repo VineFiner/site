@@ -7,7 +7,15 @@
     <form method="post" action="/author/registor">
         <div class="row">
             <label for="Email">Your email</label>
-            <input type="email" placeholder="test@mailbox.com" id="exampleEmailInput" name="email">
+            <input type="email" placeholder="test@mailbox.com" id="Email" name="email">
+        </div>
+        <div class="row">
+            <label for="Name">Your Name</label>
+            <input placeholder="name" id="Name" name="name">
+        </div>
+        <div class="row">
+            <label>Your Github</label>
+            <input placeholder="gitlabl"  name="github">
                 </div>
         <div class="row">
             <label for="Password">Your Password</label>

@@ -2,11 +2,11 @@
 
 #export("body") {
 
-    <div class="row">
+    <div class="content">
         #markdown(content)
     </div>
 
-    <div class="row">
+    <div>
     <a class="button button-primary" href="/blog/">Back Post Lists</a>
     </div>
 }
