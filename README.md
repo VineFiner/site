@@ -142,6 +142,11 @@ final class Markdown: Tag {
 (drop.view as? LeafRenderer)?.stem.register(Markdown())
 ```
 
+### Flexbox layout
+
+[flexbox 布局知识要点](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html)
+
+
 ## 部署 Heroku （待做）
 
 ### 使用 PostgreSQL
