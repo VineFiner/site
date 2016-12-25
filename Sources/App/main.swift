@@ -1,10 +1,10 @@
 import Vapor
-import VaporMySQL
 import Fluent
+import VaporPostgreSQL
 
 let drop = Droplet()
 
-try drop.addProvider(VaporMySQL.Provider.self)
+try drop.addProvider(VaporPostgreSQL.Provider.self)
 drop.preparations += Post.self
 drop.preparations += Author.self
 drop.preparations += Category.self
@@ -24,7 +24,6 @@ drop.get("/"){ request in
 
 // 也可以一个路由一个 App,如果是 blog , 建立一个 Blog 的项目，就用
 // Blog 这个类来分发这个 VC 就好
-let acronymController = AcronymController(droplet: drop)
 let blogController = BlogController(droplet: drop)
 let authorController = AuthorController(droplet: drop)
 let categoryController = CategoryController(droplet: drop)
