@@ -1,10 +1,10 @@
 #extend("base")
 
 #export("body") {
-    <div>
+    <div class="site-content-nav">
         <div class="columns">
             <div class="column is-10">
-                <h2>Blog list</h2>
+                <strong>Blog list</strong>
             </div>
             <div class="column">
                 <a class="button is-primary" href="/blog/create">Create Post</a>
@@ -12,7 +12,7 @@
         </div>
     <div>
 
-    <div>
+    <div class="site-content">
         <table class="table">
             <thead>
                 <tr>

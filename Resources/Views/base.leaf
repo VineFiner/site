@@ -5,8 +5,8 @@
         <title>TIL</title>
         <meta name="viewport" content="width=device-width, initial-sacle=1">
 
-        <link rel="stylesheet" href="/styles/app.css">
         <link rel="stylesheet" href="/lib/bulma/bulma.css">
+        <link rel="stylesheet" href="/styles/app.css">
 
         <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Raleway:400,300,600" type="text/css">
         <script type="text/javascript" src="/lib/epiceditor/js/epiceditor.min.js"></script>
@@ -14,47 +14,85 @@
     </head>
 
     <body>
-
-        <section class="hero  is-fullheight">
-            <div class="hero-head">
-                <header class="nav">
-                    <div class="container">
-                        <div class="nav-left">
-                            <a class="nav-item">
-                               Site
-                            </a>
-                        </div>
-                        <span class="nav-toggle">
+        <div class="wrapper" style="position: fixed; width: 100%; height: 100%;">
+            <section class="hero is-fullheight">
+                <div class="hero-head">
+                    <header class="nav">
+                        <div class="container">
+                            <div class="nav-left">
+                                <a class="nav-item">
+                                    Site
+                                </a>
+                            </div>
+                            <span class="nav-toggle">
                             <span></span>
                             <span></span>
                             <span></span>
                         </span>
-                        <div class="nav-right nav-menu">
+                            <div class="nav-right nav-menu">
 
-                            <a class="nav-item is-active" href="/blog">
-                                Index
-                            </a>
-                            <a class="nav-item" href="/category">
-                                Category
-                            </a>
-                            <a class="nav-item" href="/about">
-                                About
-                            </a>
+                                <a class="nav-item is-active" href="/blog">
+                                    Index
+                                </a>
+                                <a class="nav-item" href="/category">
+                                    Category
+                                </a>
+                                <a class="nav-item" href="/about">
+                                    About
+                                </a>
 
-                            <a class="nav-item" href="/author/login">
-                                Login
-                            </a>
+                                <a class="nav-item" href="/author/login">
+                                    Login
+                                </a>
+                            </div>
                         </div>
-                    </div>
-                </header>
-            </div>
-
-            <!-- Hero content: will be in the middle -->
-            <div class="hero-body">
-                <div class="container">
-                #import("body")
+                    </header>
                 </div>
-            </div>
-        </section>
+
+                <!-- Hero content: will be in the middle -->
+                <div class="hero-body site-body-wrapper" style="align-items: flex-start;">
+                    <div class="site-menu-wrapper">
+
+                        <aside class="menu" style="height: 100%; flex: 1 0 auto;">
+                            <p class="menu-label">
+                                General
+                            </p>
+                            <ul class="menu-list">
+                                <li><a href="/">Dashboard</a></li>
+                                <li><a href="/">Customers</a></li>
+                            </ul>
+                            <p class="menu-label">
+                                Administration
+                            </p>
+                            <ul class="menu-list">
+                                <li><a href="/">Team Settings</a></li>
+                                <li>
+                                    <a class="is-active" href="/">Manage Your Team</a>
+                                    <ul>
+                                        <li><a href="/">Members</a></li>
+                                        <li><a href="/">Plugins</a></li>
+                                        <li><a href="/">Add a member</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="/">Invitations</a></li>
+                                <li><a href="/">Authentication</a></li>
+                            </ul>
+                            <p class="menu-label">
+                                Transactions
+                            </p>
+                            <ul class="menu-list">
+                                <li><a href="/">Payments</a></li>
+                                <li><a href="/">Transfers</a></li>
+                                <li><a href="/">Balance</a></li>
+                            </ul>
+                        </aside>
+                    </div>
+
+                    <div class="site-content-wrapper">
+                        #import("body")
+                    </div>
+                </div>
+            </section>
+        </div>
     </body>
 </html>
