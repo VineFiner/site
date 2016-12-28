@@ -2,40 +2,53 @@
 
 #export("body") {
 
-    <div class="row">
-        <div class="u-full-width">
+    <div>
+        <div>
     #if(post) {
-            <h4>update blog</h4>
+            <h2>update blog</h2>
         </div>
     </div>
     <form action="/blog/update/#(post.id)" method="post">
     } ##else() {
-            <h4>create blog</h4>
+            <h2>create blog</h2>
         </div>
     </div>
     <form action="/blog" method="post">
 
     }
-        <div class="u-full-width">
-            <label>Title</label>
-            <input name="title" class="u-full-width" placeholder="title" value=#(post.title)>
-        </div>
-        <div class="u-full-width">
-            <label>Category</label>
-            <input name="category" class="u-full-width" placeholder="Category" value=#(post.category)>
+        <div class="control">
+            <label class="label">Title</label>
+            <input name="title" id="title" class="input" placeholder="title" value=#(post.title)>
         </div>
 
-        <div class="u-full-width" style="height: 360px;"id="epiceditor">
-            <label>Content</label>
-            <textarea id="my-edit-area" name="content" class="u-full-width">#(post.content)</textarea>
+        <label class="label">Category</label>
+        <div class="control">
+            <div class="select">
+                <select name="category">
+                #loop(categorys, "category") {
+
+                    #equal(category_id,category.id) {
+                        <option value="#(category.id)" selected="true">#(category.title)</option>
+                    } ##else() {
+                        <option value="#(category.id)">#(category.title)</option>
+                    }
+
+                }
+                </select>
+            </div>
         </div>
 
-        <div class= "row" style="margin-top: 50px">
+        <div class="control" style="height: 360px;" id="epiceditor">
+            <label class="label">Content</label>
+            <textarea id="textarea" name="content" class="textarea">#(post.content)</textarea>
+        </div>
+
+        <div class= "control" style="margin-top: 50px">
 
         #if(post) {
-            <input class="button-primary" type="submit" value="Update Blog"/>
+            <input class="button is-primary" type="submit" value="Update Blog"/>
         } ##else() {
-            <input class="button-primary" type="submit" value="Save Blog"/>
+            <input class="button is-primary" type="submit" value="Save Blog"/>
         }
         </div>
 

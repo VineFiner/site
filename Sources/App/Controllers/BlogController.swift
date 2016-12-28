@@ -9,6 +9,7 @@
 import HTTP
 import Vapor
 import cmark_swift
+import Fluent
 
 final class BlogController : BaseController {
 
@@ -43,12 +44,19 @@ final class BlogController : BaseController {
     }
 
     func rePost(request: Request, post: Post) throws -> ResponseRepresentable {
-        let params = ["post": post]
+        let category_id = try post.categorys().first()
+        let categorys = try Category.all().makeNode()
+        // TODO: 应该是一对多的关系哇。
+        let params = try Node(node:["post": post,
+                                    "category_id": category_id,
+                                    "categorys": categorys])
         return try drop.view.make("blog/create", params)
     }
 
     func createPost(request: Request) throws -> ResponseRepresentable {
-        return try drop.view.make("blog/create")
+        let categorys = try Category.all().makeNode()
+        let params = try Node(node:["categorys": categorys])
+        return try drop.view.make("blog/create", params)
     }
 
     func deletePost(request: Request, post:Post) throws -> ResponseRepresentable {
@@ -60,11 +68,17 @@ final class BlogController : BaseController {
     func addPost(request: Request) throws -> ResponseRepresentable {
         guard let title = request.data["title"]?.string,
             let content = request.data["content"]?.string,
-        let category = request.data["category"]?.string else {
+        let category_id = request.data["category"]?.int else {
+            throw Abort.badRequest
+        }
+        guard let category = try Category.find(category_id) else {
             throw Abort.badRequest
         }
         var post = Post(title: title, content: content, authorId: 1)
         try post.save()
+
+        var pivot = Pivot<Category, Post>(category, post)
+        try pivot.save()
         return Response(redirect: "/blog")
     }
 

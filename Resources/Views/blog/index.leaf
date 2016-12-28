@@ -29,7 +29,7 @@
                 <tr>
                     <td>#(post.title)</td>
                     <td>#(post.content)</td>
-                    <td>#(post.category)</td>
+                    <td>#(post.categorys)</td>
                     <td><a class="button is-primary is-small"" href="/blog/update/#(post.id)">Update</a></td>
                     <td>
                         <form action="/blog/#(post.id)/delete" method="post">

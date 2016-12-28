@@ -8,6 +8,7 @@ final class Post: Model {
     var content: String
     var html: String
     var author_id: Node // 作者
+    //TODO: 暂存
     init(title:String, content: String, authorId: Node) {
         self.title = title
         self.html = ""

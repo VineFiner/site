@@ -10,6 +10,7 @@
 
         <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Raleway:400,300,600" type="text/css">
         <script type="text/javascript" src="/lib/epiceditor/js/epiceditor.min.js"></script>
+        <script type="text/javascript" src="/js/jquery.min.js"></script>
 
     </head>
 
