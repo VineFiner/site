@@ -1,6 +1,7 @@
 import Vapor
 import Fluent
 import VaporPostgreSQL
+import Sessions
 
 let drop = Droplet()
 
@@ -11,6 +12,9 @@ drop.preparations += Category.self
 drop.preparations += Acronym.self
 drop.preparations += Pivot<Post, Category>.self // 多对多
 
+let memory = MemorySessions()
+let sessions = SessionsMiddleware(sessions: memory)
+drop.middleware.append(sessions)
 
 // 关闭页面缓存
 (drop.view as? LeafRenderer)?.stem.cache = nil

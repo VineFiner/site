@@ -2,28 +2,31 @@
 
 #export("body") {
 
-    <h1>Regist</h1>
+    <div class="box">
 
-    <form method="post" action="/author/registor">
-        <div class="row">
-            <label for="Email">Your email</label>
-            <input type="email" placeholder="test@mailbox.com" id="Email" name="email">
-        </div>
-        <div class="row">
-            <label for="Name">Your Name</label>
-            <input placeholder="name" id="Name" name="name">
-        </div>
-        <div class="row">
-            <label>Your Github</label>
-            <input placeholder="gitlabl"  name="github">
-                </div>
-        <div class="row">
-            <label for="Password">Your Password</label>
-            <input class="" type="password" name="password" id="Password">
-                </div>
-        <div class="row">
-            <input class="button-primary" type="submit" value="Regist"/>
-        </div>
+        <h1>Regist</h1>
 
-    </form>
+        <form method="post" action="/author/regist">
+            <div class="control">
+                <label for="Email">Your email</label>
+                <input type="email" placeholder="test@mailbox.com" id="Email" class="input" name="email">
+            </div>
+            <div class="control">
+                <label for="Name">Your Name</label>
+                <input placeholder="name" id="Name" name="name" class="input">
+            </div>
+            <div class="row">
+                <label>Your Github</label>
+                <input placeholder="gitlabl"  name="github" class="input">
+            </div>
+            <div class="control">
+                <label for="Password">Your Password</label>
+                <input class="input" type="password" name="password" id="Password">
+            </div>
+            <div class="control">
+                <input class="button is-primary" type="submit" value="Regist"/>
+            </div>
+        </form>
+    </div>
+
 }

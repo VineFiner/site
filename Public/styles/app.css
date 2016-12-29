@@ -60,15 +60,6 @@ body {
     margin: 0;
 }
 
-/*左边菜单*/
-.site-menu-wrapper {
-    display: flex;
-    flex-direction: column;
-    min-height: 700px;
-    padding: 10px 10px 0 10px;
-    border-right:1px  solid #ececec;
-}
-
 /*内容部分 */
 .site-content-wrapper {
     flex: 1;
@@ -76,9 +67,6 @@ body {
     flex-direction: column;
     position: relative;
     padding: 10px;
-}
-.site-content-nav {
-
 }
 
 .site-content {

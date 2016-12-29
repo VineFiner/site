@@ -4,20 +4,23 @@
 
     <div>
         <div>
-            <h1>Category List</h1>
+            <strong>Category List</strong>
         </div>
     <div>
+
     <div>
-        <form method="post" ation="/category">
+        <form class="form" method="post" ation="/category">
             <div>
                 <label>Title</label>
-                <input name="title" class="u-full-width" placeholder="title">
+                <input name="title" class="input" placeholder="title">
             </div>
             <div>
-                <input class="button-primary" type="submit" value="Save Category"/>
+                <input class="button is-primary" type="submit" value="Save Category"/>
             </div>
         </form>
     </div>
+
+
     <table class="table">
         <thead>
             <tr>
@@ -32,11 +35,11 @@
             <tr>
                 <td>#(category.id)</td>
                 <td>#(category.title)</td>
-                <td><a class="button button-primary" href="/category/update/#(category.id)">Update</a>
+                <td><a class="button is-primary" href="/category/update/#(category.id)">Update</a>
                 </td>
                 <td>
                     <form action="/category/#(category.id)/delete" method="post">
-                        <input type="submit" value="Delete" />
+                        <input type="submit" value="Delete" class="button is-primary" />
                     </form>
                 </td>
             </tr>

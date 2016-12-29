@@ -1,90 +1,22 @@
 #extend("base")
 
 #export("body") {
-    <div class="site-content-nav">
-        <h1>Login</h1>
-    </div>
-
-    <div class="site-content">
-
+    <div class="box">
+        <strong>Login</strong>
         <form method="post" action="/author/login">
-            <div class="row">
+            <div class="control">
                 <label for="Email">Your email</label>
-                <input type="email" placeholder="test@mailbox.com" id="exampleEmailInput" name="email">
+                <input type="email" placeholder="test@mailbox.com" class="input" id="exampleEmailInput" name="email">
             </div>
-            <div class="row">
+            <div class="control">
                 <label for="Password">Your Password</label>
-                <input class="" type="password" name="password" id="Password">
+                <input class="input" type="password" name="password" id="Password">
             </div>
-            <div class="row">
-                <input class="button-primary" type="submit" value="Login"/>
+            <div class="control">
+                <input class="button is-primary" type="submit" value="Login"/>
                 <a class="button" href="/author/regist">Regist</a>
             </div>
 
         </form>
-        <div>
-
-            新的 flexbox 布局模式被用来重新定义CSS中的布局方式。很遗憾的是最近规范变动过多，导致各个浏览器对它的实现也有所不同。不过我仍旧想要分享一些例子，来让你知道即将发生的改变。
-            这些例子目前只能在支持 flexbox 的 Chrome 浏览器中运行，基于最新的标准。
-
-            新的 flexbox 布局模式被用来重新定义CSS中的布局方式。很遗憾的是最近规范变动过多，导致各个浏览器对它的实现也有所不同。不过我仍旧想要分享一些例子，来让你知道即将发生的改变。
-            这些例子目前只能在支持 flexbox 的 Chrome 浏览器中运行，基于最新的标准。
-
-            新的 flexbox 布局模式被用来重新定义CSS中的布局方式。很遗憾的是最近规范变动过多，导致各个浏览器对它的实现也有所不同。不过我仍旧想要分享一些例子，来让你知道即将发生的改变。
-            这些例子目前只能在支持 flexbox 的 Chrome 浏览器中运行，基于最新的标准。
-
-            新的 flexbox 布局模式被用来重新定义CSS中的布局方式。很遗憾的是最近规范变动过多，导致各个浏览器对它的实现也有所不同。不过我仍旧想要分享一些例子，来让你知道即将发生的改变。
-            这些例子目前只能在支持 flexbox 的 Chrome 浏览器中运行，基于最新的标准。
-
-            新的 flexbox 布局模式被用来重新定义CSS中的布局方式。很遗憾的是最近规范变动过多，导致各个浏览器对它的实现也有所不同。不过我仍旧想要分享一些例子，来让你知道即将发生的改变。
-            这些例子目前只能在支持 flexbox 的 Chrome 浏览器中运行，基于最新的标准。
-
-            新的 flexbox 布局模式被用来重新定义CSS中的布局方式。很遗憾的是最近规范变动过多，导致各个浏览器对它的实现也有所不同。不过我仍旧想要分享一些例子，来让你知道即将发生的改变。
-            这些例子目前只能在支持 flexbox 的 Chrome 浏览器中运行，基于最新的标准。
-
-            新的 flexbox 布局模式被用来重新定义CSS中的布局方式。很遗憾的是最近规范变动过多，导致各个浏览器对它的实现也有所不同。不过我仍旧想要分享一些例子，来让你知道即将发生的改变。
-            这些例子目前只能在支持 flexbox 的 Chrome 浏览器中运行，基于最新的标准。
-
-            新的 flexbox 布局模式被用来重新定义CSS中的布局方式。很遗憾的是最近规范变动过多，导致各个浏览器对它的实现也有所不同。不过我仍旧想要分享一些例子，来让你知道即将发生的改变。
-            这些例子目前只能在支持 flexbox 的 Chrome 浏览器中运行，基于最新的标准。
-
-            新的 flexbox 布局模式被用来重新定义CSS中的布局方式。很遗憾的是最近规范变动过多，导致各个浏览器对它的实现也有所不同。不过我仍旧想要分享一些例子，来让你知道即将发生的改变。
-            这些例子目前只能在支持 flexbox 的 Chrome 浏览器中运行，基于最新的标准。
-
-            新的 flexbox 布局模式被用来重新定义CSS中的布局方式。很遗憾的是最近规范变动过多，导致各个浏览器对它的实现也有所不同。不过我仍旧想要分享一些例子，来让你知道即将发生的改变。
-            这些例子目前只能在支持 flexbox 的 Chrome 浏览器中运行，基于最新的标准。
-
-            新的 flexbox 布局模式被用来重新定义CSS中的布局方式。很遗憾的是最近规范变动过多，导致各个浏览器对它的实现也有所不同。不过我仍旧想要分享一些例子，来让你知道即将发生的改变。
-            这些例子目前只能在支持 flexbox 的 Chrome 浏览器中运行，基于最新的标准。
-
-            新的 flexbox 布局模式被用来重新定义CSS中的布局方式。很遗憾的是最近规范变动过多，导致各个浏览器对它的实现也有所不同。不过我仍旧想要分享一些例子，来让你知道即将发生的改变。
-            这些例子目前只能在支持 flexbox 的 Chrome 浏览器中运行，基于最新的标准。
-
-            新的 flexbox 布局模式被用来重新定义CSS中的布局方式。很遗憾的是最近规范变动过多，导致各个浏览器对它的实现也有所不同。不过我仍旧想要分享一些例子，来让你知道即将发生的改变。
-            这些例子目前只能在支持 flexbox 的 Chrome 浏览器中运行，基于最新的标准。
-
-            新的 flexbox 布局模式被用来重新定义CSS中的布局方式。很遗憾的是最近规范变动过多，导致各个浏览器对它的实现也有所不同。不过我仍旧想要分享一些例子，来让你知道即将发生的改变。
-            这些例子目前只能在支持 flexbox 的 Chrome 浏览器中运行，基于最新的标准。
-
-            新的 flexbox 布局模式被用来重新定义CSS中的布局方式。很遗憾的是最近规范变动过多，导致各个浏览器对它的实现也有所不同。不过我仍旧想要分享一些例子，来让你知道即将发生的改变。
-            这些例子目前只能在支持 flexbox 的 Chrome 浏览器中运行，基于最新的标准。
-
-            新的 flexbox 布局模式被用来重新定义CSS中的布局方式。很遗憾的是最近规范变动过多，导致各个浏览器对它的实现也有所不同。不过我仍旧想要分享一些例子，来让你知道即将发生的改变。
-            这些例子目前只能在支持 flexbox 的 Chrome 浏览器中运行，基于最新的标准。
-
-            新的 flexbox 布局模式被用来重新定义CSS中的布局方式。很遗憾的是最近规范变动过多，导致各个浏览器对它的实现也有所不同。不过我仍旧想要分享一些例子，来让你知道即将发生的改变。
-            这些例子目前只能在支持 flexbox 的 Chrome 浏览器中运行，基于最新的标准。
-
-            新的 flexbox 布局模式被用来重新定义CSS中的布局方式。很遗憾的是最近规范变动过多，导致各个浏览器对它的实现也有所不同。不过我仍旧想要分享一些例子，来让你知道即将发生的改变。
-            这些例子目前只能在支持 flexbox 的 Chrome 浏览器中运行，基于最新的标准。
-
-            新的 flexbox 布局模式被用来重新定义CSS中的布局方式。很遗憾的是最近规范变动过多，导致各个浏览器对它的实现也有所不同。不过我仍旧想要分享一些例子，来让你知道即将发生的改变。
-            这些例子目前只能在支持 flexbox 的 Chrome 浏览器中运行，基于最新的标准。
-
-            新的 flexbox 布局模式被用来重新定义CSS中的布局方式。很遗憾的是最近规范变动过多，导致各个浏览器对它的实现也有所不同。不过我仍旧想要分享一些例子，来让你知道即将发生的改变。
-            这些例子目前只能在支持 flexbox 的 Chrome 浏览器中运行，基于最新的标准。
-        </div>
-
-
     </div>
 }
