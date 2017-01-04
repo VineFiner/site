@@ -22,10 +22,8 @@ drop.middleware.append(sessions)
 // register markdown tag: #markdown(content)
 (drop.view as? LeafRenderer)?.stem.register(Markdown())
 
-drop.get("/"){ request in
-    return try drop.view.make("welcome")
-}
 
+let indexController = IndexController(droplet: drop)
 // 也可以一个路由一个 App,如果是 blog , 建立一个 Blog 的项目，就用
 // Blog 这个类来分发这个 VC 就好
 let blogController = BlogController(droplet: drop)
