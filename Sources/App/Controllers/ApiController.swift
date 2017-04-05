@@ -29,7 +29,8 @@ final class ApiController : BaseController {
         let name = request.data["name"]?.string ?? EmptyString
         return try JSON(node: [
             "version":"1.0",
-            "name":name
+            "name":name,
+            "message": "api/v1"
             ])
     }
 
