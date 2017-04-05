@@ -29,5 +29,6 @@ let indexController = IndexController(droplet: drop)
 let blogController = BlogController(droplet: drop)
 let authorController = AuthorController(droplet: drop)
 let categoryController = CategoryController(droplet: drop)
+let apiController = ApiController(droplet: drop)
 
 drop.run()
