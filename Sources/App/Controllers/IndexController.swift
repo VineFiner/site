@@ -49,6 +49,7 @@ final class IndexController : BaseController {
             hasPre = false
         }
 
+
         if (page > pageNum || page == 0) {
             throw Abort.badRequest
         }
@@ -64,7 +65,7 @@ final class IndexController : BaseController {
 
 //        let params = try Node(node:["hasNext":hasNext, "hasPre": hasPre, "posts": posts, "currentPage":page])
         let params = try Node(node:["posts": posts])
-
+        print(params)
         return try drop.view.make("index", params)
     }
 
