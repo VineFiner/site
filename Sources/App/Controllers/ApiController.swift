@@ -12,6 +12,16 @@ import HTTP
 
 let EmptyString = ""
 
+// 接口类
+// 返回的数据结构
+//
+//{
+//    code：0,
+//    message: "success",
+//    data: { key1: value1, key2: value2, ... }
+//}
+
+
 final class ApiController : BaseController {
 
     override func addRouters() {
