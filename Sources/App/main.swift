@@ -11,6 +11,8 @@ drop.preparations += Author.self
 drop.preparations += Category.self
 drop.preparations += Acronym.self
 drop.preparations += Pivot<Post, Category>.self // 多对多
+drop.preparations += Session.self
+drop.preparations += Pivot<Author,Session>.self
 
 let memory = MemorySessions()
 let sessions = SessionsMiddleware(sessions: memory)
@@ -21,7 +23,6 @@ drop.middleware.append(sessions)
 
 // register markdown tag: #markdown(content)
 (drop.view as? LeafRenderer)?.stem.register(Markdown())
-
 
 let indexController = IndexController(droplet: drop)
 // 也可以一个路由一个 App,如果是 blog , 建立一个 Blog 的项目，就用

@@ -31,6 +31,7 @@ final class Author : Model {
         email = try node.extract("email")
         github = try node.extract("github")
         password = try node.extract("password")
+        
     }
 
     func makeNode(context: Context) throws -> Node {
@@ -48,6 +49,10 @@ final class Author : Model {
 extension Author {
     func posts() throws -> Children<Post> {
         return  children()
+    }
+
+    func session() throws -> Children<Session> {
+        return children()
     }
 }
 

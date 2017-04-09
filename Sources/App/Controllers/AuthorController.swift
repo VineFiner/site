@@ -45,6 +45,8 @@ final class AuthorController : BaseController {
     }
 
     func logout(request:Request, author:Author) throws -> ResponseRepresentable {
+        let key = author.email
+        try request.session().data[key] = nil
         // how do?
         return "logout"
     }

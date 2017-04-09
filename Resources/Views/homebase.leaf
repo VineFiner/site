@@ -34,13 +34,6 @@
         <div class="content pure-u-1 pure-u-md-3-4">
             <div>
                 #import("body")
-                <div class="footer">
-                    <div class="pure-menu pure-menu-horizontal pure-menu-open">
-                        <ul>
-                            <li><a href="http://github.com/yahoo/pure/">GitHub</a></li>
-                        </ul>
-                    </div>
-                </div>
             </div>
         </div>
     </div>

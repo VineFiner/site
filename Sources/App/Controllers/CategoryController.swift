@@ -30,13 +30,10 @@ final class CategoryController : BaseController {
         return try drop.view.make("blog/category", parameters)
     }
 
-
-
     func deleteCategory(request: Request, category: Category) throws -> ResponseRepresentable {
         try category.delete()
         return Response(redirect: "/category")
     }
-
 
     func createCategory(request: Request)throws -> ResponseRepresentable {
         guard let title = request.data["title"]?.string else {

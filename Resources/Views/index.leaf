@@ -7,8 +7,8 @@
         <header class="post-header">
             <h2 class="post-title">#(post.title)</h2>
             <p class="post-meta">
-            Time:  <a class="post-author" href="/">no-time</a>
-            <a class="post-category post-category-js" href="/">no-category</a>
+            Time:  <a class="post-author" href="/"> no-time </a>
+            <a class="post-category post-category-js" href="/"> no-category </a>
             </p>
         </header>
 
@@ -17,7 +17,7 @@
             #markdown(post.content)
             </p>
         </div>
-        <a class="pure-button" href="post/#(post.id)">Read More</a>
+        <a class="pure-button" href="post/#(post.id)"> Read More </a>
     </section>
     }
 

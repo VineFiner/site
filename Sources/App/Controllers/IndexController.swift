@@ -63,9 +63,7 @@ final class IndexController : BaseController {
 
         let posts = try querty.all().makeNode()
 
-//        let params = try Node(node:["hasNext":hasNext, "hasPre": hasPre, "posts": posts, "currentPage":page])
-        let params = try Node(node:["posts": posts])
-        print(params)
+        let params = try Node(node:["hasNext":hasNext, "hasPre": hasPre, "posts": posts, "currentPage":page])
         return try drop.view.make("index", params)
     }
 
