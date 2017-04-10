@@ -47,12 +47,19 @@ final class ApiController : BaseController {
             return "Hellow, world"
         }
 
-        let userGroup = v1.grouped("user")
+        let verfi = v1.grouped(VerifyMiddleware())
+        let userGroup = verfi.grouped("user")
         userGroup.post("login", handler: login)
         userGroup.post("register",handler: register)
+
     }
 
+
+
+
+
     func register(request: Request) throws -> ResponseRepresentable {
+
         guard let email = request.data["email"]?.string else {
             return try returnErrJson(code: 1, message:"邮箱为空")
         }
@@ -145,5 +152,69 @@ final class ApiController : BaseController {
             "code": code,
             "message": message
         ])
+    }
+}
+
+final class VerifyMiddleware: Middleware {
+    func respond(to request: Request, chainingTo next: Responder) throws -> Response {
+        if verify(request: request) { // 验证数据是否被篡改
+            return try next.respond(to: request)
+        } else {
+            throw Abort.custom(
+                status: .badRequest,
+                message: "Sorry, 你传输的数据不安全!!!数据签名失败"
+            )
+        }
+    }
+
+    func verify(node: Node?, sign: String = "") -> String {
+        guard let node = node else {
+            return ""
+        }
+        var optStr = sign
+        switch node {
+        case let .array(tmps):
+            tmps.forEach({ (no) in
+                optStr += verify(node: no)
+            })
+        case let .object(obj):
+            // 升序
+            let tmp = obj.sorted(by: { (t1, t2) -> Bool in
+                return t1.0 < t2.0
+            })
+            tmp.forEach({ (op) in
+                optStr += op.key + "=" + verify(node: op.value) + "&"
+            })
+        case let .string(str):
+            optStr += str
+
+        case let .number(num):
+            optStr += "\(num)"
+
+        default: // 其他待处理
+            optStr += ""
+        }
+        do {
+            let retStr = try drop.hash.make(optStr + SessionKey, key: SessionSecret)
+            return retStr
+        } catch {
+            return ""
+        }
+    }
+
+    func verify(request: Request) -> Bool {
+        guard let query = request.query else {
+            return false
+        }
+        let sign = verify(node: query)
+        if let rsign = request.data["sign"]?.string {
+            if rsign == sign {
+                return true
+            } else {
+                return false
+            }
+        } else {
+            return false
+        }
     }
 }
